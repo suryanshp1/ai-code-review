@@ -31,7 +31,7 @@ export function DashboardSidebar({ user, plan = "Pro" }: DashboardSidebarProps) 
           <SidebarMenuItem>
             <SidebarMenuButton
               size="lg"
-              tooltip="ChaiCodeAIReview"
+              tooltip="CodeAIReview"
               render={
                 <Link href={DASHBOARD_ROUTES.overview}>
                   <span className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-none bg-sidebar">
@@ -44,8 +44,8 @@ export function DashboardSidebar({ user, plan = "Pro" }: DashboardSidebarProps) 
                     />
                   </span>
                   <span className="grid flex-1 text-left leading-tight group-data-[collapsible=icon]:hidden">
-                    <span className="truncate font-medium">ChaiCodeAIReview</span>
-                   
+                    <span className="truncate font-medium">CodeAIReview</span>
+
                   </span>
                 </Link>
               }
