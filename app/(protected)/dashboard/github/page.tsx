@@ -1,8 +1,29 @@
+import { requireAuth } from '@/features/auth/actions'
+import { getInstallatiomStatus } from '@/features/github/server/installation'
+import { DashboardHeader } from '@/features/dashboard/components/dashboard-header';
+import { GithubConnectCard } from '@/features/github/components/github-connect-card';
+import { Metadata } from 'next'
 import React from 'react'
 
-const DashboardGithubPage = () => {
+export const metadata: Metadata = {
+  title: "GitHub App - Dashboard",
+}
+
+const DashboardGithubPage = async () => {
+  const session = await requireAuth()
+
+  const installation = await getInstallatiomStatus(session.user.id)
+
+
+
   return (
-    <div>DashboardGithubPage</div>
+    <>
+      <DashboardHeader
+        title="GitHub App"
+        description="Install or disconnect the reviewer app on your GitHub account."
+      />
+      <GithubConnectCard userId={session.user.id} installation={installation} />
+    </>
   )
 }
 
