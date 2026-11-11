@@ -15,6 +15,7 @@ export const auth = betterAuth({
             mapProfileToUser: async(profile) => ({
                 email: profile.email ?? `${profile.id}@users.noreply.github.com`,
                 name: profile.name ?? profile.login,
+                image: profile.avatar_url,
             })
         },
     },
